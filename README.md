@@ -37,8 +37,8 @@ The main goal is to make the UI as smooth as possible and apply best practices i
 
 
 ## Running The App
-To run the app, make sure you have Node installed in your machine.
+To run the app, please the command below
 ```
-npm install
-npm start
+docker-compose build
+docker-compose up
 ```
