@@ -1,0 +1,37 @@
+version: "3"
+services:
+    web:
+        build: 
+            context: refactor-this/
+        container_name: frontend
+        restart: always
+        ports:
+            - 9000:9000
+        working_dir: /usr/src
+        volumes:
+            - ./refactor-this/frontend:/usr/src
+            - /usr/src/node_modules
+        environment:
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+        networks:
+            - webnet
+    api:
+        build: 
+            context: do-not-refactor/
+        container_name: backend
+        restart: always
+        ports:
+            - 8888:8888
+        working_dir: /usr/src
+        volumes:
+            - ./do-not-refactor/backend:/usr/src
+            - /usr/src/node_modules
+        environment:
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+        networks:
+            - webnet
+networks:
+    webnet:
+        driver: bridge

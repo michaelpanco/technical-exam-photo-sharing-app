@@ -1,11 +1,11 @@
 {
   "name": "technical-test",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "Valhalla Technical Test",
-  "main": "src/refactor-this/index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node src/do-not-refactor/server.js | serve src/refactor-this",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
   "homepage": "https://gitlab.com/Blvnp_Developers/technical-test#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "serve": "^11.3.2"
+    "express": "^4.17.1"
   }
 }
